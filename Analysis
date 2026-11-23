@@ -1,0 +1,45 @@
+1. Current page after each operation
+
+Operation                          Current page
+
+Initial state                      null (No page)
+
+Visit Google                       google.com
+
+Visit YouTube                      youtube.com
+
+Go back                            google.com
+
+Visit Facebook                     Facebook.com
+
+Go back                            google.com
+
+Go forward                         Facebook.com
+
+Visit StackOverflow                stackoverflow.com
+
+2. What happens to the forward stack when a new page is visited?
+Answer:
+
+When a new page is visited, the forward stack is cleared. This is because visiting a new webpage creates a new navigation path, so previously stored forward history is no longer valid.
+
+3. Why are stacks appropriate for this problem?
+Answer:
+
+Stacks are appropriate because they follow the LIFO (Last In First Out) principle. The last visited webpage is the first webpage we return to when pressing the Back button. Using two stacks makes Back and Forward navigation easy to implement.
+
+4. Time Complexity
+
+Method               Time Complexity               Explanation
+
+push()                    O(1)                     Adds a node to the top of the stack.
+
+pop()                     O(1)                     Removes the top node.
+
+peek()                    O(1)                     Returns the top element without removing it.
+
+visit()              O(n) worst case               Clearing the forward stack may require removing n elements.
+
+goBack()                  O(1)                     Uses push and pop operations.
+
+goForward()               O(1)                     Uses push and pop operations.
